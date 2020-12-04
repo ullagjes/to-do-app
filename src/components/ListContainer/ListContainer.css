@@ -1,0 +1,31 @@
+/*
+mørkest: #1A1423
+mørk: #3D314A
+mellom: #684756
+lysere: #96705B
+lysest: #AB8476
+*/
+
+.listContainerStyle{
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    margin: 2em auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: auto;
+    overflow: hidden;
+    gap: 5px;
+}
+
+.listStyle{
+    width: 100%;
+    background-color: #AB8476;
+    border-radius: 10px;
+    color: #3D314A;
+}
+
+.listStyle h2 {
+    font-size: 3.5rem;
+}
+

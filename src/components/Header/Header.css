@@ -1,0 +1,19 @@
+/*
+mørkest: #1A1423
+mørk: #3D314A
+mellom: #684756
+lysere: #96705B
+lysest: #AB8476
+*/
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    font-family: 'Elsie Swash Caps', cursive;
+    font-size: 6rem;
+    color: #AB8476;
+}

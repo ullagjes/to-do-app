@@ -1,0 +1,21 @@
+.createTask__form h3{
+    font-size: 2rem;
+}
+
+.createTask__form input[type=text]{
+    font-size: 2rem;
+    border-radius: 10px;
+    border: none;
+    padding: .2em;
+    margin: .1em;
+    width: 70%;
+}
+
+.showTaskInputBtn {
+    background-color: #684756;
+    color:  #AB8476;
+    width: 1.5em;
+    height: 1.5em;;
+    border: none;
+    border-radius: 50%;
+}

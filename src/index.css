@@ -1,0 +1,30 @@
+/*
+mørkest: #1A1423
+mørk: #3D314A
+mellom: #684756
+lysere: #96705B
+lysest: #AB8476
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: #1A1423;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
