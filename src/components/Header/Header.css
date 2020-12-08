@@ -8,12 +8,19 @@ lysest: #AB8476
 
 header{
     display: flex;
+    flex-flow: column;
     align-items: center;
     justify-content: center;
 }
 
 header h1 {
     font-family: 'Elsie Swash Caps', cursive;
-    font-size: 6rem;
-    color: #AB8476;
+    font-size: 8rem;
+    color:#ad9288;
+}
+
+header h2 {
+    color: #ad9288;  
+    font-family: 'Oleo Script', cursive;
+    font-size: 4.5rem;
 }

@@ -1,21 +1,56 @@
+/*
+mørkest: #1A1423
+mørk: #3D314A
+mellom: #684756
+lysere: #96705B
+lysest: #AB8476
+*/
+
+.hideTaskCreater{
+    display: none;
+}
+.createTask__form {
+    width: 95%;
+    padding: .2em;
+    margin: .3em auto;
+    border: 4px solid #1A1423;
+    background-color: #684756
+}
+
 .createTask__form h3{
-    font-size: 2rem;
+    color:  #1A1423; 
+    padding: .2em;
+    font-size: 2.5rem;
+    margin-top: .5em;
 }
 
 .createTask__form input[type=text]{
     font-size: 2rem;
-    border-radius: 10px;
+    background-color: #3D314A;
+    color:  #ad9288;
     border: none;
-    padding: .2em;
-    margin: .1em;
-    width: 70%;
+    padding: .3em;
+    margin: .3em .2em;
+    width: 80%;
 }
 
-.showTaskInputBtn {
-    background-color: #684756;
-    color:  #AB8476;
-    width: 1.5em;
-    height: 1.5em;;
+.createTask__form input[type=text]::placeholder{
+    color:  #ad9288;
+}
+
+.createTask__form input[type=submit]{
+    border-radius: 10px;
     border: none;
-    border-radius: 50%;
+    padding: .4em;
+    margin: 1em .3em;
+    font-weight: 700;
+    background-color: #1A1423;
+    color: #ad9288;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.createTask__form input[type=submit]:hover {
+    background-color:#AB8476;
+    color:  #1A1423;
 }

@@ -1,0 +1,113 @@
+/*
+mørkest: #1A1423
+mørk: #3D314A
+mellom: #684756
+lysere: #96705B
+lysest: #AB8476
+*/
+
+.btnAndCounter {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+}
+
+.btnAndCounter p {
+    margin: .5em;
+    font-size: 1.5rem;
+    opacity: 90%;
+    border-bottom: 1px dotted  #1A1423;
+}
+
+.btnAndCounter span {
+    font-weight: 800;
+    color: #ad9288;
+}
+
+.taskCard__div {
+    color:  #1A1423;
+    width: 95%;
+    font-size: 1.7rem;
+    padding: .3em;
+    margin: 1em auto;
+    background-color: #AB8476;
+    border: 3px solid #1A1423;
+}
+
+.taskCard__div h4{
+    font-size: 2.4rem;
+    margin-bottom: .2em;
+}
+
+.taskCard__div p {
+    margin-bottom: 1em;
+    font-size: 2.1rem;
+}
+
+.taskCard__div input[type=submit]{
+    border-radius: 20px;
+    border: 2px solid #1A1423;
+    margin: .5em 0;
+    padding: .4em;
+    background-color:#3D314A;
+    color:   #ad9288;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.taskCard__div input[type=submit]:hover{
+    background-color: #ad9288;
+    color: #1A1423;
+}
+
+.taskCompleteStyle h4 {
+    opacity: 50%;
+    text-decoration: line-through;
+}
+
+.taskCompleteStyle p {
+    text-decoration: line-through;
+    opacity: 50%;
+}
+
+.taskCompleteStyle input[type=submit]{
+    text-decoration: line-through;
+    opacity: 50%;
+    
+}
+
+.taskCompleteStyle input[type=submit]:hover{
+    background-color:#1A1423;
+    color:   #ad9288;
+}
+
+.taskCard__div label {
+    position: relative;
+    font-size: 1.7rem;
+}
+
+.taskCard__div input[type=checkbox]{
+    margin-left: .5em;
+    height: 1em;
+    width: 1em;
+    cursor: pointer;
+    z-index: 1;
+}
+
+
+
+/*.checkmark {
+    margin-left: .5em;
+    position: absolute;
+    cursor: pointer;
+    top: .5vh;
+    left: 10;
+    background-color: green;
+    border-radius: 50%;
+    height: .9em;
+    width: .9em;
+}
+
+.checkmark::after{
+    background-color: red;
+}*/

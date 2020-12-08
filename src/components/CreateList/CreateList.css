@@ -6,9 +6,11 @@ lysere: #96705B
 lysest: #AB8476
 */
 
+
 .hideList {
     display: none;
 }
+
 
 .showList {
     display: block;
@@ -21,17 +23,23 @@ lysest: #AB8476
     border: none;
     border-radius: 20px;
     font-size: 2rem;
-    padding: .5em .5em;
+    padding: .7em;
     margin-right: 1em;
+    text-align: center;
+}
+
+.showList input[type=text]::placeholder{
+    color: #b1919e;
 }
 
 .showList input[type=submit]{
-    background-color: #AB8476;
-    color: #1A1423;
+    background-color: #ad9288;
     border: none;
+    color: #1A1423;
     border-radius: 20px;
     font-size: 2rem;
-    padding: .5em .5em;
+    font-weight: 600;
+    padding: .4em;
     cursor: pointer;
 }
 .showList input[type=submit]:hover {
@@ -62,4 +70,21 @@ lysest: #AB8476
     border: 4px solid #AB8476;
     background-color: #684756;
     color:  #AB8476;
+}
+
+@media (max-width: 500px){
+    
+    .showList {
+        margin: 1em;
+    }
+
+    .showList input[type=text] {
+        width: 100%;
+        margin: 1em 0;
+    }
+    
+    .showList input[type=submit]{
+        width: 100%;
+    }
+    
 }

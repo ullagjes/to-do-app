@@ -1,37 +1,60 @@
+
 import {React, useState} from 'react'
+import '../TaskCard/TaskCard.css'
 
 function TaskCard(props){
-    
-    let [completedValue, setCompletedValue] = useState('Task completed')
+    let [boxCounter, setBoxCounter] = useState(0)
 
     function taskComplete(event){
+        let changeTaskClass = event.target.parentElement
+    
         if(event.target.checked === true){ 
-            event.target.parentElement.className = 'taskCompleteStyle'
-            setCompletedValue("Re-activate task")
+            changeTaskClass.className += ' taskCompleteStyle'
+            setBoxCounter(boxCounter + 1) 
         } else {
-            event.target.parentElement.className = 'taskNotComplete'
-            setCompletedValue("Task completed")
+            changeTaskClass.className = 'taskCard__div'
+            setBoxCounter(boxCounter - 1)
         }     
     }
     
     return(
         <div>
-            {props.taskArray.map((name, newIndex) => {
-                
-                return <div key={newIndex} className={name.urgencyClass}>
-                    
-                    <p>{name.urgency}</p>
+            <div className="btnAndCounter">
+                <p>There are <span>{props.taskArray.length} </span> tasks on this list. You have completed <span>{boxCounter}</span> tasks in total.</p>
+            </div>
+
+            {props.taskArray.map((name, index) => {
+                return <div key={name.index} className="taskCard__div">
                     <h4>{name.taskName}</h4>
                     <p>{name.taskComment}</p>
-
-                    <label htmlFor="completedTask">{completedValue}</label>
-                    <input type="checkbox" name="completedTask" onClick={taskComplete}/><br></br>
-                    <input type="submit" value="Delete task" onClick={() => props.handler(newIndex)} />
-                    
+                    <input type="submit" value="Delete task" onClick={() => props.handler(index)} /><br></br>   
+                    <label htmlFor="completedTask" >Task completed</label>
+                    <input type="checkbox" name="completedTask" onClick={taskComplete}/>
                 </div>
-            })}
+            })
+            }
         </div>
     )
 }
 
 export default TaskCard
+
+/*<div>
+            {props.taskArray.map((name, newIndex) => {
+                console.log(props.taskArray)
+                return <div key={newIndex} className="taskCard__div">
+                    
+                    
+                    <h4>{name.taskName}</h4>
+                    <p>{name.taskComment}</p>
+
+                    <label htmlFor="completedTask" >Task completed
+                    <input type="checkbox" name="completedTask" onClick={taskComplete}/>
+                    
+                    </label>
+                    <br></br>
+                    <input type="submit" value="Delete task" onClick={() => props.handler(newIndex)} />
+                    
+                </div>
+            })}
+        </div> */

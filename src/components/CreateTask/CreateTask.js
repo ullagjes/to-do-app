@@ -1,61 +1,72 @@
-import {React, useState} from 'react'
+import {React, useState, useEffect} from 'react'
 import '../CreateTask/CreateTask.css'
 import TaskCard from '../TaskCard/TaskCard'
 
 function CreateTask(){
-    let [taskName, setTaskName] = useState()
-    let [taskComment, setTaskComment] = useState()
+    let [taskName, setTaskName] = useState("")
+    let [taskComment, setTaskComment] = useState("")
     let [taskArray, setTaskArray] = useState([])
     let taskArrayCopy = [...taskArray]
-    let [urgencyClass, setUrgencyClass] = useState()
-    let [urgency, setUrgency] = useState()
-
+    
     function changeTaskName(event){
         setTaskName(event.target.value)
     }
+
     function changeTaskComment(event){
         setTaskComment(event.target.value)
     }
 
-    function addUrgency(event){
-        if(event.target.checked === true && event.target.value === "NonUrgent"){
-           setUrgencyClass("nonUrgentStyle")
-           setUrgency("Not urgent")
-        } if(event.target.checked === true && event.target.value === "Urgent"){
-            setUrgencyClass("urgentStyle")
-            setUrgency("Urgent!")
-        }
-    }
-
     function addTaskToList(event){
         event.preventDefault()
-        setTaskArray(prevTaskArray => [...prevTaskArray, {taskName: taskName, taskComment: taskComment, urgency: urgency, urgencyClass: urgencyClass}])
-        setTaskName()
-        setTaskComment()
+        let taskIndex = Math.random()*1000
+        setTaskArray(prevTaskArray => [...prevTaskArray, {taskName: taskName, taskComment: taskComment, index: taskIndex}])
+        setTaskName("")
+        setTaskComment("")
     }
-
+    
     function removeTask(index){
         taskArrayCopy.splice(index,1)
         setTaskArray(taskArrayCopy)
-        console.log(taskArrayCopy)
     }
 
     return(
         <div>
-            <input type="submit" value="+" className="showTaskInputBtn"/>
-            <form action="Add a new task" className="createTask__form">
-                <h3>Add a new task</h3>
-                <input type="text" placeholder="Name of task"value={taskName} onChange={changeTaskName}/><br></br>
-                <input type="text" placeholder="Additional comments" value={taskComment} onChange={changeTaskComment}/><br></br>
-                <input type="radio" name="urgency" value="NonUrgent" onClick={addUrgency}/>
-                <label htmlFor="NonUrgent">Not urgent</label>
-                <input type="radio" name="urgency" value="Urgent" onClick={addUrgency}/>
-                <label htmlFor="Urgent">Urgent!</label><br></br>
-                <input type="submit" value="Add task to list" onClick={addTaskToList}/>
-            </form>
-            <TaskCard taskArray={taskArrayCopy} handler={removeTask}/>
+            <TaskCard  taskArray={taskArrayCopy} handler={removeTask}/>
+            
+            <div>
+                <form action="Add a new task" className="createTask__form">
+                    <h3>Add a new task</h3>              
+                    <input type="text" placeholder="Name of task"value={taskName} onChange={changeTaskName}/>
+                    <br></br>
+                    <input type="text" placeholder="Additional comments" value={taskComment} onChange={changeTaskComment}/>
+                    <br></br>
+                    <input type="submit" value="Add task to list" onClick={addTaskToList}/>
+                </form>
+            </div>
+            
         </div>
     )
 }
 
 export default CreateTask
+
+/*setTaskArray(prevTaskArray => [...prevTaskArray, {taskName: taskName, taskComment: taskComment, index: props.followIndex}]) */
+
+/*<input type="submit" value="Add task to list" onClick={addTaskToList}/>*/
+
+/*setTaskArray(prevTaskArray => [...prevTaskArray, {taskName: taskName, taskComment: taskComment, index: taskIndex}])*/
+
+//let [btnValue, setBtnValue] = useState("-")
+    //let [toggleTask, setToggleTask] = useState(true)
+
+    /*function displayTaskCreater(event){
+        setToggleTask(!toggleTask)
+        let changeClass = event.target.parentElement.querySelector("form")
+        if(toggleTask === false){
+            changeClass.className = 'createTask__form'
+            setBtnValue("-")
+        } else {
+            changeClass.className ='hideTaskCreater'
+            setBtnValue("+")
+        }
+    } */
