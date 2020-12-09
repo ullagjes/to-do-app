@@ -1,24 +1,17 @@
-/*
-mørkest: #1A1423
-mørk: #3D314A
-mellom: #684756
-lysere: #96705B
-lysest: #AB8476
-*/
 
-
+/*HIDELIST IS ADDED BY DEFAULT AND REMOVED WITH BOOLEAN STATE IN CREATELIST.JS*/
 .hideList {
     display: none;
 }
 
-
+/*CLASS IS ADDED WHEN BUTTON IS PRESSED. WILL SHOW TEXT INPUTFIELD*/
 .showList {
     display: block;
     margin: 1.5em 0;
 }
 
 .showList input[type=text] {
-    color: #AB8476;
+    color: #ebd9d3;
     background-color: #3D314A;
     border: none;
     border-radius: 20px;
@@ -46,6 +39,8 @@ lysest: #AB8476
     background-color: #684756;
     color:  #AB8476;
 }
+
+/*CREATE LIST BUTTON*/
 .createNewList__div {
     display: flex;
     flex-flow: column;

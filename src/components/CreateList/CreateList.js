@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from 'react'
+import {React, useState} from 'react'
 import '../CreateList/CreateList.css'
 import ListContainer from '../ListContainer/ListContainer'
 
@@ -10,16 +10,7 @@ function CreateList(){
     let [listFormClass, setListFormClass] = useState('hideList')
     let [listFormHidden, setListFormHidden] = useState(false)
     
-    /*useEffect(() => {
-        const data = localStorage.getItem('Listnames')
-        if(data) {
-            setListNameArray(JSON.parse(data))
-        }
-    },  [])
-
-    useEffect(() => {
-        localStorage.setItem('Listnames', JSON.stringify(listNameCopy))
-    })*/
+    //BOOLEAN STATE ADDS AND REMOVES CLASSNAMES, MAKING INPUT FIELD VISIBLE OR HIDDEN
 
     function showListForm(){
         setListFormHidden(!listFormHidden)
@@ -30,10 +21,12 @@ function CreateList(){
         }
     }
     
+    //INPUT VALUES USED FOR CREATING ARRAY CONTAINING NAMES OF CREATED LISTS
     function createNewListName(event) {
         setNewListName(event.target.value)
     }
 
+    //FUNCTION ADDS CREATED VALUE FROM INPUT FIELD TO EXISTING LISTNAMEARRAY
     function updateListNameArray(event) {
         event.preventDefault()
         let createdIndex = Math.random()*1000
@@ -41,11 +34,13 @@ function CreateList(){
         setNewListName("")
     }
 
+    //FUNCTION FOR DELETING LISTS. COPIES EXISTING ARRAY, SPLICES CHOSEN OBJECT AND USES USESTATE TO UPDATE ORIGINAL ARRAY. FUNCTION IS ADDED TO CHILDCOMPONENT AS PROP
     function deleteList(index){
         listNameCopy.splice(index, 1)
         setListNameArray(listNameCopy)
     }
 
+    //COMPONENT RETURNS SECTION CONTAINING TEXT INPUT AND CHILD COMPONENT <ListContainer /> CONTAINING CREATED ARRAY AND DELETED ARRAY AS PROP
     return( 
         <section>
             <div className="createNewList__div">

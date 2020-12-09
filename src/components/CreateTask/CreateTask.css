@@ -1,14 +1,5 @@
-/*
-mørkest: #1A1423
-mørk: #3D314A
-mellom: #684756
-lysere: #96705B
-lysest: #AB8476
-*/
+/*STYLE FOR FORM WITH INPUT FIELDS FOR CREATING EACH TASK*/
 
-.hideTaskCreater{
-    display: none;
-}
 .createTask__form {
     width: 95%;
     padding: .2em;
@@ -18,16 +9,22 @@ lysest: #AB8476
 }
 
 .createTask__form h3{
-    color:  #1A1423; 
+    color:   #ebd9d3;
     padding: .2em;
-    font-size: 2.5rem;
-    margin-top: .5em;
+    font-size: 2.7rem;
+    margin: .5em 0;
+}
+
+.createTask__form label {
+    font-size: 2.2rem;
+    color:   #ebd9d3;
+    margin: .5em .2em;
 }
 
 .createTask__form input[type=text]{
-    font-size: 2rem;
-    background-color: #3D314A;
-    color:  #ad9288;
+    font-size: 2.2rem;
+    background-color:  #1A1423;
+    color:  #ebd9d3;
     border: none;
     padding: .3em;
     margin: .3em .2em;
@@ -35,11 +32,13 @@ lysest: #AB8476
 }
 
 .createTask__form input[type=text]::placeholder{
-    color:  #ad9288;
+    color:  #ebd9d3;
+    opacity: 50%;
 }
 
 .createTask__form input[type=submit]{
     border-radius: 10px;
+    
     border: none;
     padding: .4em;
     margin: 1em .3em;
@@ -51,6 +50,6 @@ lysest: #AB8476
 }
 
 .createTask__form input[type=submit]:hover {
-    background-color:#AB8476;
+    background-color:#ad9288;
     color:  #1A1423;
 }
